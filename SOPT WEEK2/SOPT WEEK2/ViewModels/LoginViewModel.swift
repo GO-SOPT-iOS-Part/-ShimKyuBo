@@ -10,14 +10,17 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+    // MARK: - Using MVVM with RxSwift using Input and Output Protocol
+    /// 참고 및 출처: https://mildwhale.github.io/2020-04-16-mvvm-with-input-output/
 final class LoginViewModel: ViewModelType {
+    // 의존성은 왜 필요할까?
     struct Dependency {
         var email: String?
         var password: String?
     }
     
     struct Input {
-        // 왜 AnyObserver 일까?
+        // 왜 AnyObserver 일까? 흠 왜
         var emailText: AnyObserver<String?>
         var passwordText: AnyObserver<String?>
     }
@@ -42,7 +45,7 @@ final class LoginViewModel: ViewModelType {
         let emailText = BehaviorSubject<String?>(value: nil)
         let passwordText = BehaviorSubject<String?>(value: nil)
         
-        var isEmailEnabled: Driver<Bool> = emailText
+        let isEmailEnabled: Driver<Bool> = emailText
             .map(emailValidation)
             .asDriver(onErrorJustReturn: false)
         
@@ -60,6 +63,8 @@ final class LoginViewModel: ViewModelType {
     }
 }
 
+    // MARK: - VM 의 Life Cycle 을 관리하기 위해 따로 뺀 func
+    /// 따로 빼지 않으면, init 에서 쓸 수 없다.
 private func emailValidation(_ email: String?) -> Bool {
     let emailRegEx = "[A-Za-z0-9.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,40}"
     let emailTest = NSPredicate(format: "SELF MATCHES %@", emailRegEx)

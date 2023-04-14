@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIButton {
+    // Set a Single UnderLine for UIButton
     func setUnderline() {
         guard let title = self.title(for: .normal) else { return }
         let attributedString = NSMutableAttributedString(string: title)

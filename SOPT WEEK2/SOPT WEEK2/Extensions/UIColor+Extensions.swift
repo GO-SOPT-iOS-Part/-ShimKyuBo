@@ -7,6 +7,7 @@
 
 import UIKit
 
+    // MARK: - Extension for shifting Hex Code to UIColor
 extension UIColor {
     convenience init(hex: String, alpha: CGFloat = 1.0) {
         var hexFormatted: String = hex.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).uppercased()

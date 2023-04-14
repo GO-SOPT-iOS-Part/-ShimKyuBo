@@ -12,12 +12,21 @@ import RxSwift
 import RxCocoa
 import SnapKit
 
+    // MARK: - VC for HomeView
 final class HomeViewController: UIViewController {
     
+    weak var delegate: LogInDelegate?
+//    private var loginUIAction: UIAction?
+
+    // MARK: - RxSwift Properties
     private var loginViewModel = LoginViewModel()
     var disposeBag = DisposeBag()
     private let isEmailFine: BehaviorRelay<Bool> = BehaviorRelay(value: false)
     
+    // MARK: - Property for checking whether nickname exists
+    private var nickname: String?
+    
+    // MARK: - UI Components
     private let customNavigationView = CustomNavigationBar()
     
     private let mainLabel = UILabel().then {
@@ -27,6 +36,7 @@ final class HomeViewController: UIViewController {
     }
     
     private let idTextfield = UITextField().then {
+        $0.returnKeyType = .next
         $0.keyboardType = .emailAddress
         $0.autocorrectionType = .no
         $0.autocapitalizationType = .none
@@ -52,7 +62,8 @@ final class HomeViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     }
     
-    private let passwordTextfield = ModifiedTextField().then {
+    private let passwordTextfield = UITextField().then {
+        $0.returnKeyType = .done
         $0.autocorrectionType = .no
         $0.autocapitalizationType = .none
         $0.font = .CustomPretendarFont(.SemiBold, forTextStyle: .callout)
@@ -80,12 +91,7 @@ final class HomeViewController: UIViewController {
         $0.contentMode = .scaleAspectFit
     }
     
-    private lazy var loginButton = UIButton(type: .system, primaryAction: UIAction(handler: { [weak self] _ in
-        if self?.checkEmailValid() == true {
-            let nextVC = LoggedInViewController()
-            self?.navigationController?.pushViewController(nextVC, animated: true)
-        }
-    })).then {
+    private lazy var loginButton = UIButton(type: .system).then {
         $0.isEnabled = false
         $0.titleLabel?.font = .CustomPretendarFont(.SemiBold, forTextStyle: .subheadline)
         $0.setTitleColor(.BrandGray2, for: .normal)
@@ -116,7 +122,22 @@ final class HomeViewController: UIViewController {
         $0.text = "아직 계정이 없으신가요?"
     }
     
-    private let makeNickNameButton = UIButton(type: .system).then {
+    private lazy var makeNickNameButton = UIButton(type: .system, primaryAction: UIAction(handler: { [weak self] _ in
+        let bottomSheetVC = CreatingNicknameViewController()
+        bottomSheetVC.modalPresentationStyle = .pageSheet
+        bottomSheetVC.delegate = self
+        
+        if let sheet = bottomSheetVC.sheetPresentationController {
+            sheet.prefersGrabberVisible = true
+            sheet.preferredCornerRadius = 30
+            sheet.detents = [
+                .custom { context in
+                    return context.maximumDetentValue * 0.55
+                }
+            ]
+        }
+        self?.present(bottomSheetVC, animated: true)
+    })).then {
         $0.setTitleColor(.BrandGray2, for: .normal)
         $0.titleLabel?.font = .CustomPretendarFont(.Regular, forTextStyle: .subheadline)
         $0.setTitle("닉네임 만들러가기", for: .normal)
@@ -133,6 +154,7 @@ final class HomeViewController: UIViewController {
         $0.backgroundColor = .BrandGray4
     }
     
+    // MARK: - VC Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         basicSetup()
@@ -146,11 +168,7 @@ final class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.isHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.navigationBar.isHidden = false
-    }
-    
+    // MARK: - Setups
     private func basicSetup() {
         view.backgroundColor = .black
         idTextfield.delegate = self
@@ -234,6 +252,7 @@ final class HomeViewController: UIViewController {
         }
     }
     
+    // MARK: - Rx Bindings
     private func bindings() {
         idTextfield.rx.text
             .bind(to: loginViewModel.input.emailText)
@@ -267,16 +286,45 @@ final class HomeViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    // MARK: - Gesture Setups
     private func actions() {
         let clearButtonTappedOnId = UITapGestureRecognizer(target: self, action: #selector(clearTextOnId))
         let clearButtonTappedOnPassword = UITapGestureRecognizer(target: self, action: #selector(clearTextOnPassword))
         let toggleSecurityButtonTapped = UITapGestureRecognizer(target: self, action: #selector(toggleSecurity))
         let keyboardGoesDownWhenViewTapped = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        loginButton.addTarget(self, action: #selector(loginAction), for: .touchUpInside)
         
         clearButtonForIdImageView.addGestureRecognizer(clearButtonTappedOnId)
         clearButtonForPasswordImageView.addGestureRecognizer(clearButtonTappedOnPassword)
         toggleTextSecurityImageView.addGestureRecognizer(toggleSecurityButtonTapped)
         view.addGestureRecognizer(keyboardGoesDownWhenViewTapped)
+    }
+    
+}
+    
+    // MARK: - Requisite Actions
+extension HomeViewController {
+    /// 로그인 액션
+    @objc
+    private func loginAction() {
+        let passingText: String?
+        let nicknameExists: Bool = self.checkEmailValid() == true && self.nickname != nil
+        let nicknameNil: Bool = self.checkEmailValid() == true && self.nickname == nil
+        
+        let nextVC = LoggedInViewController()
+        self.delegate = nextVC
+        
+        if nicknameNil {
+            passingText = self.idTextfield.text
+        } else if nicknameExists {
+            passingText = self.nickname
+        } else {
+            self.animateWhenEmailIsNotValid()
+            return
+        }
+        
+        self.delegate?.passId(passingText)
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     private func checkEmailValid() -> Bool {
@@ -293,9 +341,10 @@ final class HomeViewController: UIViewController {
         return emailValidation
     }
     
+    // Animation when Email doesn't follow the RegEx
     private func animateWhenEmailIsNotValid() {
         let animation = CAKeyframeAnimation(keyPath: "position.x")
-        animation.values = [0, -12, 0, 12, 0]
+        animation.values = [0, -3, 0, 3, 0]
         animation.keyTimes = [0, 0.08, 0.17, 0.26, 0.35]
         animation.duration = 0.35
         animation.fillMode = .forwards
@@ -304,9 +353,7 @@ final class HomeViewController: UIViewController {
         checkEmailValidPointView.layer.add(animation, forKey: nil)
         idTextfield.layer.add(animation, forKey: nil)
     }
-}
-
-extension HomeViewController {
+    
     @objc
     private func viewTapped() {
         view.endEditing(true)
@@ -332,13 +379,18 @@ extension HomeViewController {
     }
 }
 
+    // MARK: - Extension for UITextFieldDelegate
 extension HomeViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == passwordTextfield {
             clearButtonForPasswordImageView.isHidden = false
             toggleTextSecurityImageView.isHidden = false
+            textField.layer.borderColor = UIColor.BrandGray2.cgColor
+            textField.layer.borderWidth = 1
         } else {
             clearButtonForIdImageView.isHidden = false
+            textField.layer.borderColor = UIColor.BrandGray2.cgColor
+            textField.layer.borderWidth = 1
         }
     }
     
@@ -346,8 +398,33 @@ extension HomeViewController: UITextFieldDelegate {
         if textField == passwordTextfield {
             clearButtonForPasswordImageView.isHidden = true
             toggleTextSecurityImageView.isHidden = true
+            textField.isSecureTextEntry = true
+            textField.layer.borderColor = UIColor.BrandGray2.cgColor
+            textField.layer.borderWidth = 0
         } else {
             clearButtonForIdImageView.isHidden = true
+            textField.layer.borderColor = UIColor.BrandGray2.cgColor
+            textField.layer.borderWidth = 0
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == idTextfield {
+            passwordTextfield.becomeFirstResponder()
+        } else {
+            // 키보드의 Return 을 눌러도 똑같이 버튼과 작동
+            passwordTextfield.resignFirstResponder()
+            self.loginAction()
+        }
+        
+        return true
+    }
+}
+
+    // MARK: - Extension for NicknameDelegate
+extension HomeViewController: NicknameDelegate {
+    func passNickname(_ name: String?) {
+        guard let name else { return }
+        self.nickname = name
     }
 }

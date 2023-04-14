@@ -15,8 +15,6 @@
 		58254E8429E82978003E8704 /* UIFont+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58254E8329E82978003E8704 /* UIFont+Extensions.swift */; };
 		58254E8629E84A5B003E8704 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58254E8529E84A5B003E8704 /* UIView+Extensions.swift */; };
 		585BB2F929E873F90021A94A /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BB2F829E873F90021A94A /* UIButton+Extensions.swift */; };
-		585BB2FB29E883950021A94A /* ModifiedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BB2FA29E883950021A94A /* ModifiedTextField.swift */; };
-		585BB2FD29E8853F0021A94A /* HideTextFieldSecurityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585BB2FC29E8853F0021A94A /* HideTextFieldSecurityView.swift */; };
 		5872A5A729E81D3000A91063 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 5872A5A629E81D3000A91063 /* SnapKit */; };
 		5872A5AA29E81D3A00A91063 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 5872A5A929E81D3A00A91063 /* Then */; };
 		5872A5AD29E81D6700A91063 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 5872A5AC29E81D6700A91063 /* RxCocoa */; };
@@ -28,6 +26,7 @@
 		58B273E529E811680007C58C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58B273E429E811680007C58C /* Assets.xcassets */; };
 		58B273E829E811680007C58C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B273E629E811680007C58C /* LaunchScreen.storyboard */; };
 		58D6DBB029E95C230062E6E7 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6DBAF29E95C230062E6E7 /* LoggedInViewController.swift */; };
+		58D6DBB229E978CF0062E6E7 /* CreatingNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6DBB129E978CF0062E6E7 /* CreatingNicknameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,8 +38,6 @@
 		58254E8329E82978003E8704 /* UIFont+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+Extensions.swift"; sourceTree = "<group>"; };
 		58254E8529E84A5B003E8704 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		585BB2F829E873F90021A94A /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
-		585BB2FA29E883950021A94A /* ModifiedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModifiedTextField.swift; sourceTree = "<group>"; };
-		585BB2FC29E8853F0021A94A /* HideTextFieldSecurityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideTextFieldSecurityView.swift; sourceTree = "<group>"; };
 		58B273D829E811670007C58C /* SOPT WEEK2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SOPT WEEK2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58B273DB29E811670007C58C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58B273DD29E811670007C58C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +46,7 @@
 		58B273E729E811680007C58C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58B273E929E811680007C58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58D6DBAF29E95C230062E6E7 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
+		58D6DBB129E978CF0062E6E7 /* CreatingNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingNicknameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +70,7 @@
 			children = (
 				58B273DF29E811670007C58C /* HomeViewController.swift */,
 				58D6DBAF29E95C230062E6E7 /* LoggedInViewController.swift */,
+				58D6DBB129E978CF0062E6E7 /* CreatingNicknameViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -80,8 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				5816A82429E81FE2001ADF53 /* CustomNavigationBar.swift */,
-				585BB2FA29E883950021A94A /* ModifiedTextField.swift */,
-				585BB2FC29E8853F0021A94A /* HideTextFieldSecurityView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -255,14 +252,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D6DBB029E95C230062E6E7 /* LoggedInViewController.swift in Sources */,
+				58D6DBB229E978CF0062E6E7 /* CreatingNicknameViewController.swift in Sources */,
 				5816A82529E81FE2001ADF53 /* CustomNavigationBar.swift in Sources */,
 				58B273E029E811670007C58C /* HomeViewController.swift in Sources */,
 				58B273DC29E811670007C58C /* AppDelegate.swift in Sources */,
 				585BB2F929E873F90021A94A /* UIButton+Extensions.swift in Sources */,
-				585BB2FD29E8853F0021A94A /* HideTextFieldSecurityView.swift in Sources */,
 				58254E8629E84A5B003E8704 /* UIView+Extensions.swift in Sources */,
 				58B273DE29E811670007C58C /* SceneDelegate.swift in Sources */,
-				585BB2FB29E883950021A94A /* ModifiedTextField.swift in Sources */,
 				58254E8429E82978003E8704 /* UIFont+Extensions.swift in Sources */,
 				5816A82829E82002001ADF53 /* UIColor+Extensions.swift in Sources */,
 				5816A82229E81FC4001ADF53 /* LoginViewModel.swift in Sources */,

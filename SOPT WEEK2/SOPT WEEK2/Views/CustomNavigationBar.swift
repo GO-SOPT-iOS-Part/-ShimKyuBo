@@ -10,12 +10,12 @@ import UIKit
 import SnapKit
 import Then
 
+    // MARK: - Custom Navigation View for future Seminars
 final class CustomNavigationBar: UIView {
     
     private let backButton = UIButton(type: .system, primaryAction: UIAction(handler: { _ in
         print("Back Button Tapped")
     })).then {
-//        $0.setPreferredSymbolConfiguration(UIImage.SymbolConfiguration(pointSize: 3), forImageIn: .normal)
         $0.imageView?.contentMode = .scaleAspectFit
         $0.setImage(UIImage(named: "chevronIcon"), for: .normal)
     }
