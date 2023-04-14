@@ -89,6 +89,16 @@ final class CreatingNicknameViewController: UIViewController {
 
     // MARK: - Extension for UITextFieldDelegate
 extension CreatingNicknameViewController: UITextFieldDelegate {
+    // Return false when 
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let titleCharacter = string.cString(using: .utf8)
+        let isBackSpace = strcmp(titleCharacter, "\\b")
+        if string.hasCharacters() || isBackSpace == -92 {
+            return true
+        }
+        return false
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
         guard let text = textField.text else { return }
         if text.count > 0 {

@@ -27,6 +27,7 @@
 		58B273E829E811680007C58C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58B273E629E811680007C58C /* LaunchScreen.storyboard */; };
 		58D6DBB029E95C230062E6E7 /* LoggedInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6DBAF29E95C230062E6E7 /* LoggedInViewController.swift */; };
 		58D6DBB229E978CF0062E6E7 /* CreatingNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6DBB129E978CF0062E6E7 /* CreatingNicknameViewController.swift */; };
+		58D6DBB429E99E5D0062E6E7 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58D6DBB329E99E5D0062E6E7 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		58B273E929E811680007C58C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58D6DBAF29E95C230062E6E7 /* LoggedInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggedInViewController.swift; sourceTree = "<group>"; };
 		58D6DBB129E978CF0062E6E7 /* CreatingNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingNicknameViewController.swift; sourceTree = "<group>"; };
+		58D6DBB329E99E5D0062E6E7 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				58254E8329E82978003E8704 /* UIFont+Extensions.swift */,
 				58254E8529E84A5B003E8704 /* UIView+Extensions.swift */,
 				585BB2F829E873F90021A94A /* UIButton+Extensions.swift */,
+				58D6DBB329E99E5D0062E6E7 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58D6DBB029E95C230062E6E7 /* LoggedInViewController.swift in Sources */,
+				58D6DBB429E99E5D0062E6E7 /* String+Extensions.swift in Sources */,
 				58D6DBB229E978CF0062E6E7 /* CreatingNicknameViewController.swift in Sources */,
 				5816A82529E81FE2001ADF53 /* CustomNavigationBar.swift in Sources */,
 				58B273E029E811670007C58C /* HomeViewController.swift in Sources */,
