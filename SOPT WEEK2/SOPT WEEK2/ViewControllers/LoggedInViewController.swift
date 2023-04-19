@@ -51,6 +51,8 @@ final class LoggedInViewController: UIViewController {
     }
     
     private func layouts() {
+        lazy var kkk = UIImage()
+        
         view.addSubviews(tvingLogo, idLabel, popToLoginViewButton)
         
         tvingLogo.snp.makeConstraints {

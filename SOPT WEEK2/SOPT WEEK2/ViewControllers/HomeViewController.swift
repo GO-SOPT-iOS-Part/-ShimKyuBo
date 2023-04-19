@@ -376,6 +376,7 @@ extension HomeViewController {
     private func toggleSecurity(_ textField: UITextField) {
         passwordTextfield.isSecureTextEntry.toggle()
         passwordTextfield.becomeFirstResponder()
+        toggleTextSecurityImageView.image = !passwordTextfield.isSecureTextEntry ? UIImage(named: "eyeOpenIcon") : UIImage(named: "eyeIcon")
     }
 }
 
