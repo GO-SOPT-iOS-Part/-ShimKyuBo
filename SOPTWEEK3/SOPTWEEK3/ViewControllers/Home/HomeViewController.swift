@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeViewController: UIViewController {
+final class HomeViewController: UIViewController {
 //
 //    override func loadView() {
 //        self.view =
