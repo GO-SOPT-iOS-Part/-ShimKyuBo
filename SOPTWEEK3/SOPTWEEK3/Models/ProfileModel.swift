@@ -9,6 +9,6 @@ import UIKit
 
 struct ProfileModel: Hashable {
     var idNumber: UUID = UUID()
-    var profileImage: UIImage?
-    var profileName: String
+    var userProfileImage: UIImage?
+    var userName: String?
 }

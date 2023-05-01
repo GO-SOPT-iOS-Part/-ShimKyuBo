@@ -5,4 +5,10 @@
 //  Created by KYUBO A. SHIM on 2023/05/01.
 //
 
-import Foundation
+import UIKit.UICollectionViewCell
+
+extension UICollectionViewCell {
+    static var cellIdentifier: String {
+        return String(describing: self)
+    }
+}

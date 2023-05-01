@@ -17,16 +17,23 @@ final class HomeViewController: UIViewController {
 //    }
 
     private let headerBarView = HomeHeaderCustomBarView()
+    private let headerTapView = HomeHeaderTabView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .black
-        view.addSubview(headerBarView)
+        view.addSubviews(headerBarView, headerTapView)
         
         headerBarView.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.horizontalEdges.equalToSuperview()
-            $0.height.equalTo(45)
+            $0.height.equalTo(35)
+        }
+        
+        headerTapView.snp.makeConstraints {
+            $0.top.equalTo(headerBarView.snp.bottom)
+            $0.horizontalEdges.equalToSuperview()
+            $0.height.equalTo(50)
         }
     }
     
