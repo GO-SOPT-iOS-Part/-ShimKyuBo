@@ -21,4 +21,10 @@ extension String {
         
         return false
     }
+    
+    func fetchOnlyIdFromEmail() -> String {
+        guard let index =  self.firstIndex(of: "@") else { return "" }
+        
+        return String(self[self.startIndex...index])
+    }
 }
