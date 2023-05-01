@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeHeadCustomBarView: UIView {
+class HomeHeaderCustomBarView: UIView {
 
     private let mainLogoImageView: UIImageView = UIImageView()
     private let shareButton: UIButton = UIButton(type: .custom)
@@ -21,7 +21,6 @@ class HomeHeadCustomBarView: UIView {
         basicSetup()
         setStyle()
         setLayout()
-        setActions()
     }
     
     private func basicSetup() {
@@ -77,16 +76,12 @@ class HomeHeadCustomBarView: UIView {
         }
     }
     
-    private func setActions() {
-        
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
 
-extension HomeHeadCustomBarView {
+extension HomeHeaderCustomBarView {
     @objc
     private func shareButtonTapped() {
         print("AirPlay Tapped.")
