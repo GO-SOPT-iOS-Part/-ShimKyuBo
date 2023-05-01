@@ -33,3 +33,8 @@ protocol LogInDelegate: AnyObject {
 protocol NicknameDelegate: AnyObject {
     func passNickname(_ name: String?)
 }
+
+protocol HomeTabsType {
+    associatedtype Sections
+    var tabIdentity: String { get }
+}
