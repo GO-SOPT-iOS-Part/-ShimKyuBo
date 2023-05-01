@@ -45,6 +45,11 @@ final class LoggedInViewController: UIViewController {
         layouts()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isHidden = true
+    }
+    
     // MARK: - Setups
     private func basicSetup() {
         view.backgroundColor = .black

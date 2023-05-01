@@ -1,0 +1,20 @@
+//
+//  UIButton+Extensions.swift
+//  SOPTWEEK3
+//
+//  Created by KYUBO A. SHIM on 2023/04/30.
+//
+
+import UIKit.UIButton
+
+extension UIButton {
+    // Set a Single UnderLine for UIButton
+    func setUnderline() {
+        guard let title = self.title(for: .normal) else { return }
+        let attributedString = NSMutableAttributedString(string: title)
+        attributedString.addAttribute(.underlineStyle, value: NSUnderlineStyle.single.rawValue, range: NSRange(location: 0, length: title.count))
+        attributedString.addAttribute(.underlineColor, value: self.titleColor(for: .normal)!, range: NSRange(location: 0, length: title.count))
+        attributedString.addAttribute(NSAttributedString.Key.foregroundColor, value: self.titleColor(for: .normal)!, range: NSRange(location: 0, length: title.count))
+        self.setAttributedTitle(attributedString, for: .normal)
+    }
+}
