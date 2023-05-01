@@ -10,7 +10,7 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeHeaderCustomBarView: UIView {
+final class HomeHeaderCustomBarView: UIView {
 
     private let mainLogoImageView: UIImageView = UIImageView()
     private let shareButton: UIButton = UIButton(type: .custom)
@@ -58,7 +58,7 @@ class HomeHeaderCustomBarView: UIView {
         self.addSubviews(mainLogoImageView, profileButton, shareButton)
         
         mainLogoImageView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().inset(15)
             $0.centerY.equalToSuperview()
             $0.height.equalTo(20)
             $0.width.equalTo(80)
@@ -71,7 +71,7 @@ class HomeHeaderCustomBarView: UIView {
         }
         
         shareButton.snp.makeConstraints {
-            $0.trailing.equalTo(profileButton.snp.leading).offset(-30)
+            $0.trailing.equalTo(profileButton.snp.leading).offset(-25)
             $0.centerY.equalTo(profileButton.snp.centerY)
         }
     }
