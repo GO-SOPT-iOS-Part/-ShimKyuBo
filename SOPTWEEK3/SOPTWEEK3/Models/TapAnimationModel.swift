@@ -5,4 +5,10 @@
 //  Created by KYUBO A. SHIM on 2023/05/02.
 //
 
-import Foundation
+import UIKit
+
+struct TapRect {
+    var index: Int
+    var width: CGFloat
+    var xPosition: CGPoint
+}
