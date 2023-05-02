@@ -17,7 +17,7 @@ final class HomeViewController: UIViewController {
 //    }
 
     private let headerBarView = HomeHeaderCustomBarView()
-    private let headerTapView = HomeHeaderTabView()
+    private let headerTapView = HomeHeaderTapView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

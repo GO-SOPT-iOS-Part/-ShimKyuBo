@@ -1,5 +1,5 @@
 //
-//  HomeHeaderTabCollectionViewCell.swift
+//  HomeHeaderTapCollectionViewCell.swift
 //  SOPTWEEK3
 //
 //  Created by KYUBO A. SHIM on 2023/05/01.
@@ -17,19 +17,19 @@ final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
         didSet {
             if isSelected {
                 // 어떻게 앞에 있는 image 도 bold 하게 만들 수 있을까?
-                tabMenuLabel.font = .CustomPretendarFont(.ExtraBold, forTextStyle: .body)
+                tapMenuLabel.font = .CustomPretendarFont(.ExtraBold, forTextStyle: .body)
             } else {
-                tabMenuLabel.font = .CustomPretendarFont(.Regular, forTextStyle: .body)
+                tapMenuLabel.font = .CustomPretendarFont(.Regular, forTextStyle: .body)
             }
         }
     }
     
-    private let homeTabViewModel = HomeTapViewModel()
+    private let homeTapViewModel = HomeTapViewModel()
     
     private let imageBeforeText = UIImageView()
-    private let tabMenuLabel = UILabel()
+    private let tapMenuLabel = UILabel()
     
-    private let stackView = UIStackView()
+    let stackView = UIStackView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -49,7 +49,7 @@ final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
             $0.image = UIImage.load(name: "LiveLogo")
         }
         
-        tabMenuLabel.do {
+        tapMenuLabel.do {
             $0.textColor = .white
             $0.font = .CustomPretendarFont(.Regular, forTextStyle: .body)
             $0.textAlignment = .center
@@ -66,7 +66,7 @@ final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
     
     private func setLayout() {
         stackView.addArrangedSubview(imageBeforeText)
-        stackView.addArrangedSubview(tabMenuLabel)
+        stackView.addArrangedSubview(tapMenuLabel)
         self.addSubviews(stackView)
         
         stackView.snp.makeConstraints {
@@ -88,17 +88,12 @@ final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
 }
 
 extension HomeHeaderTapCollectionViewCell {
-    func configureCell(tabMenu: String) {
-        self.tabMenuLabel.text = tabMenu
+    func configureCell(tapMenu: String) {
+        self.tapMenuLabel.text = tapMenu
     }
     
-    func configureCellWithImage(tabMenu : String) {
-        self.tabMenuLabel.text = tabMenu
+    func configureCellWithImage(tapMenu : String) {
+        self.tapMenuLabel.text = tapMenu
         self.imageBeforeText.isHidden = false
-    }
-    
-    func fetchCellWidthSize() -> CGFloat {
-        print(stackView.frame.width)
-        return stackView.frame.width
     }
 }

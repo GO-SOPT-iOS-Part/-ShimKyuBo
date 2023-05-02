@@ -34,7 +34,7 @@ protocol NicknameDelegate: AnyObject {
     func passNickname(_ name: String?)
 }
 
-protocol HomeTabsType {
+protocol HomeTapsType {
     associatedtype Sections
-    var tabIdentity: String { get }
+    var tapIdentity: String { get }
 }
