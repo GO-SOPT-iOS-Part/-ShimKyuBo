@@ -10,13 +10,13 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-final class HomeTabViewModel: HomeTabsType {
+final class HomeTapViewModel: HomeTapsType {
     
     typealias PosterImageName = String
     typealias SectionName = String
 
     var disposeBag: DisposeBag = DisposeBag()
-    let tabIdentity: String = HomeCommonViewModel.HeaderTabs.home.rawValue
+    let tapIdentity: String = HomeCommonViewModel.HeaderTaps.home.rawValue
     private let postersArray: [PosterImageName?] = ["KiminoPoster", "SiganlPoster", "HPPoster", "LOTRPoster", "SuzumePoster"]
     private let bannersArray: [PosterImageName?] = ["banner1", "banner2", "banner3"]
     private let paramountArray: [PosterImageName?] = ["para1", "para2", "para3", "para4", "para5"]
@@ -49,7 +49,7 @@ final class HomeTabViewModel: HomeTabsType {
     }
 }
 
-extension HomeTabViewModel {
+extension HomeTapViewModel {
     func fetchBannerPosters() -> BehaviorRelay<[PosterImageName?]> {
         bannerPosters.accept(bannersArray)
         return bannerPosters

@@ -11,7 +11,7 @@ import RxSwift
 import SnapKit
 import Then
 
-final class HomeHeaderTabCollectionViewCell: UICollectionViewCell {
+final class HomeHeaderTapCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
@@ -24,7 +24,7 @@ final class HomeHeaderTabCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    private let homeTabViewModel = HomeTabViewModel()
+    private let homeTabViewModel = HomeTapViewModel()
     
     private let imageBeforeText = UIImageView()
     private let tabMenuLabel = UILabel()
@@ -87,7 +87,7 @@ final class HomeHeaderTabCollectionViewCell: UICollectionViewCell {
     }
 }
 
-extension HomeHeaderTabCollectionViewCell {
+extension HomeHeaderTapCollectionViewCell {
     func configureCell(tabMenu: String) {
         self.tabMenuLabel.text = tabMenu
     }

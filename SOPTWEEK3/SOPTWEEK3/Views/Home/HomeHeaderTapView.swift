@@ -10,10 +10,16 @@ import UIKit
 import SnapKit
 import Then
 
-final class HomeHeaderTabView: UIView {
-    private lazy var tapList = HomeCommonViewModel.HeaderTabs.allCases
+final class HomeHeaderTapView: UIView {
+    struct tapPosition {
+        var index: Int
+        var width: CGFloat
+    }
+    
+    private lazy var tapList = HomeCommonViewModel.HeaderTaps.allCases
     
     private var isHomeSelected = true
+    private var selectedTabIndex: Int = 0
     
     private lazy var tapViewCollectionView = UICollectionView(frame: .zero, collectionViewLayout: setFlowLayout())
     
@@ -52,7 +58,7 @@ final class HomeHeaderTabView: UIView {
     }
 }
 
-extension HomeHeaderTabView {
+extension HomeHeaderTapView {
     private func setFlowLayout() -> UICollectionViewFlowLayout {
         let tapViewFlowLayout = UICollectionViewFlowLayout()
         tapViewFlowLayout.estimatedItemSize = UICollectionViewFlowLayout.automaticSize
@@ -60,13 +66,17 @@ extension HomeHeaderTabView {
         tapViewFlowLayout.minimumLineSpacing = 5
         return tapViewFlowLayout
     }
+    
+    private func moveUnderlineFor(at index: Int)
 }
 
-extension HomeHeaderTabView: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeHeaderTapView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         isHomeSelected = false
-
-        print("\(indexPath.item)")
+        selectedTabIndex = indexPath.item
+        
+        // 애니메이션 method IN
+        print("\(selectedTabIndex)")
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -79,6 +89,7 @@ extension HomeHeaderTabView: UICollectionViewDelegate, UICollectionViewDataSourc
         if indexPath.item == 0 && isHomeSelected == true {
             cell.isSelected = true
             collectionView.selectItem(at: indexPath, animated: false, scrollPosition: .init())
+            selectedTabIndex = indexPath.item
         }
         
         if indexPath.item == 1 {
