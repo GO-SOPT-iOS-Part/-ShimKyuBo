@@ -12,7 +12,8 @@ import Then
 
     // MARK: - VC for getting passed texts
 final class LoggedInViewController: UIViewController {
-
+    
+    private var userName: String?
     weak var delegate: LogInDelegate?
     
     // MARK: - UIComponents
@@ -28,8 +29,12 @@ final class LoggedInViewController: UIViewController {
         $0.font = .CustomPretendarFont(.Bold, forTextStyle: .title2)
     }
     
-    private lazy var popToLoginViewButton = UIButton(type: .system, primaryAction: UIAction(handler: { [weak self] _ in
-        self?.navigationController?.popViewController(animated: true)
+    private lazy var moveToHomeViewButton = UIButton(type: .system, primaryAction: UIAction(handler: { [weak self] _ in
+        let nextVC = HomeViewController()
+//        guard let userName else {}
+        nextVC.passUserName(name: self?.userName)
+        
+        self?.navigationController?.pushViewController(nextVC, animated: true)
     })).then {
         $0.titleLabel?.font = .CustomPretendarFont(.SemiBold, forTextStyle: .subheadline)
         $0.setTitle("메인으로", for: .normal)
@@ -58,7 +63,7 @@ final class LoggedInViewController: UIViewController {
     private func layouts() {
         lazy var kkk = UIImage()
         
-        view.addSubviews(tvingLogo, idLabel, popToLoginViewButton)
+        view.addSubviews(tvingLogo, idLabel, moveToHomeViewButton)
         
         tvingLogo.snp.makeConstraints {
             $0.top.equalTo(view.safeAreaLayoutGuide)
@@ -71,7 +76,7 @@ final class LoggedInViewController: UIViewController {
             $0.centerX.equalToSuperview()
         }
         
-        popToLoginViewButton.snp.makeConstraints {
+        moveToHomeViewButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(20)
             $0.bottom.equalToSuperview().inset(66)
             $0.height.equalTo(52)
@@ -84,5 +89,6 @@ extension LoggedInViewController: LogInDelegate {
     func passId(_ id: String?) {
         guard let id else { return }
         idLabel.text = "\(id) 님\n 반가워요!"
+        userName = id
     }
 }

@@ -10,11 +10,11 @@ import UIKit
 import SnapKit
 import Then
 
-class HomeHeaderCustomBarView: UIView {
+final class HomeHeaderCustomBarView: UIView {
 
     private let mainLogoImageView: UIImageView = UIImageView()
     private let shareButton: UIButton = UIButton(type: .custom)
-    private let profileButton: UIButton = UIButton(type: .custom)
+    let profileButton: UIButton = UIButton(type: .custom)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,13 +44,12 @@ class HomeHeaderCustomBarView: UIView {
             $0.setImage(iconImage, for: .normal)
             $0.contentMode = .scaleAspectFit
             $0.tintColor = .white
-            $0.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
         }
         
         profileButton.do {
             $0.setImage(UIImage.load(name: "BearsLogo"), for: .normal)
             $0.backgroundColor = .clear
-            $0.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
+//            $0.addTarget(self.superview, action: #selector(profileTapped), for: .touchUpInside)
         }
     }
     
@@ -58,7 +57,7 @@ class HomeHeaderCustomBarView: UIView {
         self.addSubviews(mainLogoImageView, profileButton, shareButton)
         
         mainLogoImageView.snp.makeConstraints {
-            $0.leading.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().inset(15)
             $0.centerY.equalToSuperview()
             $0.height.equalTo(20)
             $0.width.equalTo(80)
@@ -71,7 +70,7 @@ class HomeHeaderCustomBarView: UIView {
         }
         
         shareButton.snp.makeConstraints {
-            $0.trailing.equalTo(profileButton.snp.leading).offset(-30)
+            $0.trailing.equalTo(profileButton.snp.leading).offset(-25)
             $0.centerY.equalTo(profileButton.snp.centerY)
         }
     }
@@ -82,13 +81,9 @@ class HomeHeaderCustomBarView: UIView {
 }
 
 extension HomeHeaderCustomBarView {
-    @objc
-    private func shareButtonTapped() {
-        print("AirPlay Tapped.")
-    }
-    
-    @objc
-    private func profileButtonTapped() {
-        print("Profile Button Tapped.")
-    }
+//    @objc
+//    private func profileTapped() {
+//        let nextVC = ProfileViewController()
+//
+//    }
 }

@@ -8,13 +8,23 @@
 import UIKit.UIFont
 
 extension UIFont {
-    static func CustomPretendarFont(_ font: Pretendard, forTextStyle style: UIFont.TextStyle, overrideFontSize: UIContentSizeCategory? = nil) -> UIFont? {
-        guard let customFont = UIFont(name: font.fontName(), size: font.fontSize(style: style)) else { return nil }
+    static func CustomPretendarFont(_ font: Pretendard, forTextStyle style: UIFont.TextStyle, overrideFontSize: UIContentSizeCategory? = nil) -> UIFont {
+        guard let customFont = UIFont(name: font.fontName(), size: font.fontSize(style: style)) else { return UIFont() }
         let scaledFont: UIFont
         let metrics = UIFontMetrics(forTextStyle: style)
         scaledFont = metrics.scaledFont(for: customFont, compatibleWith: UITraitCollection(preferredContentSizeCategory: overrideFontSize ?? .unspecified))
         return scaledFont
     }
+    
+//    func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+//        guard let descriptor = fontDescriptor.withSymbolicTraits(traits) else { return
+//            UIFont() }
+//        return UIFont(descriptor: descriptor, size: 0)
+//    }
+//
+//    func makeItalic() -> UIFont {
+//        return withTraits(traits: .traitItalic)
+//    }
 }
 
 enum Pretendard {
@@ -49,7 +59,7 @@ enum Pretendard {
         case .title2: return 23.0
         case .title3: return 20.0
         case .headline: return 18.0
-        case .body: return 17.0
+        case .body: return 16.0
         case .callout: return 15.0
         case .subheadline: return 14.0
         case .footnote: return 13.0

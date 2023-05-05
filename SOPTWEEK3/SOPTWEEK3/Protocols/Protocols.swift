@@ -33,3 +33,12 @@ protocol LogInDelegate: AnyObject {
 protocol NicknameDelegate: AnyObject {
     func passNickname(_ name: String?)
 }
+
+protocol HomeTapsType {
+    associatedtype Sections
+    var tapIdentity: String { get }
+}
+
+protocol PageIndicatorDelegate: AnyObject {
+    func passPages(page: Int)
+}
