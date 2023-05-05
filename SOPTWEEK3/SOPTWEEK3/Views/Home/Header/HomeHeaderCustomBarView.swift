@@ -14,7 +14,7 @@ final class HomeHeaderCustomBarView: UIView {
 
     private let mainLogoImageView: UIImageView = UIImageView()
     private let shareButton: UIButton = UIButton(type: .custom)
-    private let profileButton: UIButton = UIButton(type: .custom)
+    let profileButton: UIButton = UIButton(type: .custom)
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -44,13 +44,12 @@ final class HomeHeaderCustomBarView: UIView {
             $0.setImage(iconImage, for: .normal)
             $0.contentMode = .scaleAspectFit
             $0.tintColor = .white
-            $0.addTarget(self, action: #selector(shareButtonTapped), for: .touchUpInside)
         }
         
         profileButton.do {
             $0.setImage(UIImage.load(name: "BearsLogo"), for: .normal)
             $0.backgroundColor = .clear
-            $0.addTarget(self, action: #selector(profileButtonTapped), for: .touchUpInside)
+//            $0.addTarget(self.superview, action: #selector(profileTapped), for: .touchUpInside)
         }
     }
     
@@ -82,13 +81,9 @@ final class HomeHeaderCustomBarView: UIView {
 }
 
 extension HomeHeaderCustomBarView {
-    @objc
-    private func shareButtonTapped() {
-        print("AirPlay Tapped.")
-    }
-    
-    @objc
-    private func profileButtonTapped() {
-        print("Profile Button Tapped.")
-    }
+//    @objc
+//    private func profileTapped() {
+//        let nextVC = ProfileViewController()
+//
+//    }
 }

@@ -8,13 +8,23 @@
 import UIKit.UIFont
 
 extension UIFont {
-    static func CustomPretendarFont(_ font: Pretendard, forTextStyle style: UIFont.TextStyle, overrideFontSize: UIContentSizeCategory? = nil) -> UIFont? {
-        guard let customFont = UIFont(name: font.fontName(), size: font.fontSize(style: style)) else { return nil }
+    static func CustomPretendarFont(_ font: Pretendard, forTextStyle style: UIFont.TextStyle, overrideFontSize: UIContentSizeCategory? = nil) -> UIFont {
+        guard let customFont = UIFont(name: font.fontName(), size: font.fontSize(style: style)) else { return UIFont() }
         let scaledFont: UIFont
         let metrics = UIFontMetrics(forTextStyle: style)
         scaledFont = metrics.scaledFont(for: customFont, compatibleWith: UITraitCollection(preferredContentSizeCategory: overrideFontSize ?? .unspecified))
         return scaledFont
     }
+    
+//    func withTraits(traits: UIFontDescriptor.SymbolicTraits) -> UIFont {
+//        guard let descriptor = fontDescriptor.withSymbolicTraits(traits) else { return
+//            UIFont() }
+//        return UIFont(descriptor: descriptor, size: 0)
+//    }
+//
+//    func makeItalic() -> UIFont {
+//        return withTraits(traits: .traitItalic)
+//    }
 }
 
 enum Pretendard {

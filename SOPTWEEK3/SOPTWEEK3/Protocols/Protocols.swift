@@ -38,3 +38,7 @@ protocol HomeTapsType {
     associatedtype Sections
     var tapIdentity: String { get }
 }
+
+protocol PageIndicatorDelegate: AnyObject {
+    func passPages(page: Int)
+}

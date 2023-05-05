@@ -13,7 +13,6 @@ extension UICollectionView {
         let cellOrigin = cellAttributes.frame.origin
 //        let cellOriginPointFrameInSuperView = self.convert(cellAttributes.frame, to: self).origin
         let cellXPosition: CGPoint = CGPoint(x: cellOrigin.x + paddingFromLeading, y: cellOrigin.y)
-//        let cellXPosition: CGPoint = CGPoint(x: cellOriginPointFrameInSuperView.x + paddingFromLeading, y: cellOriginPointFrameInSuperView.y)
         
         let cellWidth: CGFloat = cellAttributes.size.width - cellHorizontalPadding
         
