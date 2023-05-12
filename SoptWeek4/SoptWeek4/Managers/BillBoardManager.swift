@@ -51,7 +51,7 @@ final class BillBoardManager {
     
     private func isDataValid<T: Codable>(data: Data, withTypeOf type: T.Type) -> NetworkResult<T> {
         let decoder = JSONDecoder()
-        guard let decodedData = try? decoder.decode(T.self, from: data) else {
+        guard let decodedData = try? decoder.decode(type.self, from: data) else {
             return .pathErr
         }
         
