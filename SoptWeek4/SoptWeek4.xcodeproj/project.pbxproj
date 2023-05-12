@@ -7,10 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5823A7852A0A1A970088E296 /* AppleMusicChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823A7842A0A1A970088E296 /* AppleMusicChartViewController.swift */; };
+		5823A7872A0A1B260088E296 /* AppleMusicManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823A7862A0A1B260088E296 /* AppleMusicManager.swift */; };
+		5823A7892A0A1B300088E296 /* BillBoardManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823A7882A0A1B300088E296 /* BillBoardManager.swift */; };
+		5823A78B2A0A1C180088E296 /* ChartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823A78A2A0A1C180088E296 /* ChartModel.swift */; };
+		5823A7932A0A1F1B0088E296 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823A7922A0A1F1B0088E296 /* Protocols.swift */; };
+		5823A7972A0AD13B0088E296 /* BillBoardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823A7962A0AD13B0088E296 /* BillBoardTableViewCell.swift */; };
+		5823A7992A0ADCEB0088E296 /* NSCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5823A7982A0ADCEB0088E296 /* NSCacheManager.swift */; };
+		58540B8E2A0B5B6E00A195E9 /* BillboardHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58540B8D2A0B5B6E00A195E9 /* BillboardHeaderView.swift */; };
+		58540B902A0B5CE400A195E9 /* BillBoardDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58540B8F2A0B5CE400A195E9 /* BillBoardDetailViewController.swift */; };
+		58C63A982A0CE57C00DB9693 /* AppleMusicSongCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C63A972A0CE57C00DB9693 /* AppleMusicSongCollectionViewCell.swift */; };
+		58C63A9A2A0D043900DB9693 /* AppleHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C63A992A0D043900DB9693 /* AppleHeaderView.swift */; };
+		58C63A9D2A0D078900DB9693 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C63A9C2A0D078900DB9693 /* UIImage+Extensions.swift */; };
+		58C63A9F2A0D20F100DB9693 /* AppleMusicDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C63A9E2A0D20F100DB9693 /* AppleMusicDetailViewController.swift */; };
+		58C63AA12A0D4D0D00DB9693 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C63AA02A0D4D0D00DB9693 /* BaseTableViewController.swift */; };
 		58C7173E2A0614A6003E27EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7173D2A0614A6003E27EA /* AppDelegate.swift */; };
 		58C717402A0614A6003E27EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7173F2A0614A6003E27EA /* SceneDelegate.swift */; };
-		58C717422A0614A6003E27EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C717412A0614A6003E27EA /* ViewController.swift */; };
-		58C717452A0614A6003E27EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C717432A0614A6003E27EA /* Main.storyboard */; };
+		58C717422A0614A6003E27EA /* BillBoardChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C717412A0614A6003E27EA /* BillBoardChartViewController.swift */; };
 		58C717472A0614A7003E27EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58C717462A0614A7003E27EA /* Assets.xcassets */; };
 		58C7174A2A0614A7003E27EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58C717482A0614A7003E27EA /* LaunchScreen.storyboard */; };
 		58C717532A0614FF003E27EA /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 58C717522A0614FF003E27EA /* SnapKit */; };
@@ -18,23 +31,32 @@
 		58C717592A0615C5003E27EA /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 58C717582A0615C5003E27EA /* Alamofire */; };
 		58C7175B2A062379003E27EA /* Congifuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7175A2A062379003E27EA /* Congifuration.swift */; };
 		58C7175D2A06239C003E27EA /* NetworkResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7175C2A06239C003E27EA /* NetworkResult.swift */; };
-		58C7175F2A06261B003E27EA /* AlamofireManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C7175E2A06261B003E27EA /* AlamofireManager.swift */; };
-		58C717612A062915003E27EA /* SignUpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C717602A062915003E27EA /* SignUpResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5823A7842A0A1A970088E296 /* AppleMusicChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicChartViewController.swift; sourceTree = "<group>"; };
+		5823A7862A0A1B260088E296 /* AppleMusicManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicManager.swift; sourceTree = "<group>"; };
+		5823A7882A0A1B300088E296 /* BillBoardManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBoardManager.swift; sourceTree = "<group>"; };
+		5823A78A2A0A1C180088E296 /* ChartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartModel.swift; sourceTree = "<group>"; };
+		5823A7922A0A1F1B0088E296 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		5823A7962A0AD13B0088E296 /* BillBoardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBoardTableViewCell.swift; sourceTree = "<group>"; };
+		5823A7982A0ADCEB0088E296 /* NSCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSCacheManager.swift; sourceTree = "<group>"; };
+		58540B8D2A0B5B6E00A195E9 /* BillboardHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillboardHeaderView.swift; sourceTree = "<group>"; };
+		58540B8F2A0B5CE400A195E9 /* BillBoardDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBoardDetailViewController.swift; sourceTree = "<group>"; };
+		58C63A972A0CE57C00DB9693 /* AppleMusicSongCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicSongCollectionViewCell.swift; sourceTree = "<group>"; };
+		58C63A992A0D043900DB9693 /* AppleHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleHeaderView.swift; sourceTree = "<group>"; };
+		58C63A9C2A0D078900DB9693 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		58C63A9E2A0D20F100DB9693 /* AppleMusicDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleMusicDetailViewController.swift; sourceTree = "<group>"; };
+		58C63AA02A0D4D0D00DB9693 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		58C7173A2A0614A6003E27EA /* SoptWeek4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoptWeek4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58C7173D2A0614A6003E27EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58C7173F2A0614A6003E27EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		58C717412A0614A6003E27EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		58C717442A0614A6003E27EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		58C717412A0614A6003E27EA /* BillBoardChartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillBoardChartViewController.swift; sourceTree = "<group>"; };
 		58C717462A0614A7003E27EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58C717492A0614A7003E27EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58C7174B2A0614A7003E27EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		58C7175A2A062379003E27EA /* Congifuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Congifuration.swift; sourceTree = "<group>"; };
 		58C7175C2A06239C003E27EA /* NetworkResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkResult.swift; sourceTree = "<group>"; };
-		58C7175E2A06261B003E27EA /* AlamofireManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireManager.swift; sourceTree = "<group>"; };
-		58C717602A062915003E27EA /* SignUpResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +73,101 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5823A78C2A0A1C210088E296 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5823A78A2A0A1C180088E296 /* ChartModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5823A78D2A0A1C290088E296 /* Supports */ = {
+			isa = PBXGroup;
+			children = (
+				58C7173D2A0614A6003E27EA /* AppDelegate.swift */,
+				58C7173F2A0614A6003E27EA /* SceneDelegate.swift */,
+				58C717462A0614A7003E27EA /* Assets.xcassets */,
+				58C717482A0614A7003E27EA /* LaunchScreen.storyboard */,
+				58C7174B2A0614A7003E27EA /* Info.plist */,
+			);
+			path = Supports;
+			sourceTree = "<group>";
+		};
+		5823A78E2A0A1C3D0088E296 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				58540B8F2A0B5CE400A195E9 /* BillBoardDetailViewController.swift */,
+				58C717412A0614A6003E27EA /* BillBoardChartViewController.swift */,
+				5823A7842A0A1A970088E296 /* AppleMusicChartViewController.swift */,
+				58C63A9E2A0D20F100DB9693 /* AppleMusicDetailViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5823A78F2A0A1C440088E296 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58C63AA22A0D4D1400DB9693 /* Common */,
+				5823A7952A0ACC0B0088E296 /* BillBoard */,
+				5823A7942A0ACC030088E296 /* AppleMusic */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5823A7902A0A1C560088E296 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				58C7175A2A062379003E27EA /* Congifuration.swift */,
+				5823A7862A0A1B260088E296 /* AppleMusicManager.swift */,
+				5823A7882A0A1B300088E296 /* BillBoardManager.swift */,
+				5823A7982A0ADCEB0088E296 /* NSCacheManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		5823A7912A0A1C780088E296 /* Networks */ = {
+			isa = PBXGroup;
+			children = (
+				5823A7922A0A1F1B0088E296 /* Protocols.swift */,
+				58C7175C2A06239C003E27EA /* NetworkResult.swift */,
+			);
+			path = Networks;
+			sourceTree = "<group>";
+		};
+		5823A7942A0ACC030088E296 /* AppleMusic */ = {
+			isa = PBXGroup;
+			children = (
+				58C63A972A0CE57C00DB9693 /* AppleMusicSongCollectionViewCell.swift */,
+				58C63A992A0D043900DB9693 /* AppleHeaderView.swift */,
+			);
+			path = AppleMusic;
+			sourceTree = "<group>";
+		};
+		5823A7952A0ACC0B0088E296 /* BillBoard */ = {
+			isa = PBXGroup;
+			children = (
+				5823A7962A0AD13B0088E296 /* BillBoardTableViewCell.swift */,
+				58540B8D2A0B5B6E00A195E9 /* BillboardHeaderView.swift */,
+			);
+			path = BillBoard;
+			sourceTree = "<group>";
+		};
+		58C63A9B2A0D077600DB9693 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				58C63A9C2A0D078900DB9693 /* UIImage+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		58C63AA22A0D4D1400DB9693 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				58C63AA02A0D4D0D00DB9693 /* BaseTableViewController.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		58C717312A0614A6003E27EA = {
 			isa = PBXGroup;
 			children = (
@@ -70,17 +187,13 @@
 		58C7173C2A0614A6003E27EA /* SoptWeek4 */ = {
 			isa = PBXGroup;
 			children = (
-				58C7173D2A0614A6003E27EA /* AppDelegate.swift */,
-				58C7173F2A0614A6003E27EA /* SceneDelegate.swift */,
-				58C717412A0614A6003E27EA /* ViewController.swift */,
-				58C717432A0614A6003E27EA /* Main.storyboard */,
-				58C717462A0614A7003E27EA /* Assets.xcassets */,
-				58C717482A0614A7003E27EA /* LaunchScreen.storyboard */,
-				58C7174B2A0614A7003E27EA /* Info.plist */,
-				58C7175A2A062379003E27EA /* Congifuration.swift */,
-				58C7175C2A06239C003E27EA /* NetworkResult.swift */,
-				58C7175E2A06261B003E27EA /* AlamofireManager.swift */,
-				58C717602A062915003E27EA /* SignUpResponse.swift */,
+				58C63A9B2A0D077600DB9693 /* Extensions */,
+				5823A78C2A0A1C210088E296 /* Models */,
+				5823A7912A0A1C780088E296 /* Networks */,
+				5823A7902A0A1C560088E296 /* Managers */,
+				5823A78F2A0A1C440088E296 /* Views */,
+				5823A78E2A0A1C3D0088E296 /* ViewControllers */,
+				5823A78D2A0A1C290088E296 /* Supports */,
 			);
 			path = SoptWeek4;
 			sourceTree = "<group>";
@@ -155,7 +268,6 @@
 			files = (
 				58C7174A2A0614A7003E27EA /* LaunchScreen.storyboard in Resources */,
 				58C717472A0614A7003E27EA /* Assets.xcassets in Resources */,
-				58C717452A0614A6003E27EA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,27 +278,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58C717422A0614A6003E27EA /* ViewController.swift in Sources */,
+				5823A7872A0A1B260088E296 /* AppleMusicManager.swift in Sources */,
+				58540B902A0B5CE400A195E9 /* BillBoardDetailViewController.swift in Sources */,
+				58C63A982A0CE57C00DB9693 /* AppleMusicSongCollectionViewCell.swift in Sources */,
+				5823A7972A0AD13B0088E296 /* BillBoardTableViewCell.swift in Sources */,
+				58C63A9F2A0D20F100DB9693 /* AppleMusicDetailViewController.swift in Sources */,
+				5823A7892A0A1B300088E296 /* BillBoardManager.swift in Sources */,
+				58C717422A0614A6003E27EA /* BillBoardChartViewController.swift in Sources */,
+				58C63A9A2A0D043900DB9693 /* AppleHeaderView.swift in Sources */,
+				58C63AA12A0D4D0D00DB9693 /* BaseTableViewController.swift in Sources */,
+				5823A7932A0A1F1B0088E296 /* Protocols.swift in Sources */,
 				58C7175D2A06239C003E27EA /* NetworkResult.swift in Sources */,
-				58C717612A062915003E27EA /* SignUpResponse.swift in Sources */,
+				5823A78B2A0A1C180088E296 /* ChartModel.swift in Sources */,
 				58C7173E2A0614A6003E27EA /* AppDelegate.swift in Sources */,
 				58C7175B2A062379003E27EA /* Congifuration.swift in Sources */,
-				58C7175F2A06261B003E27EA /* AlamofireManager.swift in Sources */,
+				5823A7852A0A1A970088E296 /* AppleMusicChartViewController.swift in Sources */,
+				58540B8E2A0B5B6E00A195E9 /* BillboardHeaderView.swift in Sources */,
+				58C63A9D2A0D078900DB9693 /* UIImage+Extensions.swift in Sources */,
 				58C717402A0614A6003E27EA /* SceneDelegate.swift in Sources */,
+				5823A7992A0ADCEB0088E296 /* NSCacheManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		58C717432A0614A6003E27EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				58C717442A0614A6003E27EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		58C717482A0614A7003E27EA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -317,15 +433,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.123.11";
+				BASE_URL = "https://raw.githubusercontent.com/KoreanThinker/billboard-json/main/billboard-hot-100/recent.json";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 98TYR8WM82;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SoptWeek4/Info.plist;
+				INFOPLIST_FILE = SoptWeek4/Supports/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Music Albums uses Apple Music to help you rediscover your music.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -346,15 +462,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "http://54.180.123.11";
+				BASE_URL = "https://raw.githubusercontent.com/KoreanThinker/billboard-json/main/billboard-hot-100/recent.json";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 98TYR8WM82;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SoptWeek4/Info.plist;
+				INFOPLIST_FILE = SoptWeek4/Supports/Info.plist;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Music Albums uses Apple Music to help you rediscover your music.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
