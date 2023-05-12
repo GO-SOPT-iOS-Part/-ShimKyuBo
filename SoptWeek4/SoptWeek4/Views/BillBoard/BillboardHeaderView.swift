@@ -9,12 +9,32 @@ import UIKit
 
 class BillboardHeaderView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    private let dateLabel = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        dateLabel.do {
+            $0.font = UIFont.systemFont(ofSize: 18, weight: .regular)
+            $0.textColor = .gray
+        }
+        
+        self.addSubview(dateLabel)
+        
+        dateLabel.snp.makeConstraints {
+            $0.leading.equalToSuperview().inset(20)
+            $0.centerY.equalToSuperview()
+        }
     }
-    */
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
 
+extension BillboardHeaderView {
+    func addDate(date: String) {
+        let newDate = date.replacingOccurrences(of: "-", with: ".")
+        dateLabel.text = newDate
+    }
 }

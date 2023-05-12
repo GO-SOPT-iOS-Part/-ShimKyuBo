@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  BillBoardChartViewController.swift
 //  SoptWeek4
 //
 //  Created by KYUBO A. SHIM on 2023/05/06.
@@ -135,7 +135,6 @@ extension BillBoardChartViewController: UITableViewDelegate, UITableViewDataSour
         let billboardItem = billboardChart[indexPath.row]
         let thumbnailImageUrlString = billboardItem.albumImage
         let highQImageCacheKey = NSString(string: thumbnailImageUrlString + "Q")
-        let imageCacheKey = NSString(string: thumbnailImageUrlString)
         
         let artist = billboardItem.artist
         let song = billboardItem.songName
