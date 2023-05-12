@@ -29,7 +29,7 @@ class BaseTabBarController: UITabBarController {
     
     @objc func handleSwipeGesture(_ gesture: UISwipeGestureRecognizer) {
         if gesture.direction == .left {
-            if (self.selectedIndex) < 2 { // 슬라이드할 탭바 갯수 지정 (전체 탭바 갯수 - 1)
+            if (self.selectedIndex) < 1 { // 슬라이드할 탭바 갯수 지정 (전체 탭바 갯수 - 1)
                 animateToTab(toIndex: self.selectedIndex + 1)
             }
         } else if gesture.direction == .right {
